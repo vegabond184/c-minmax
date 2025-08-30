@@ -14,7 +14,6 @@ It also includes a **benchmarking script** that compares the performance of the 
   - Benchmark performance on arrays of different sizes.
 
 ---
----
 ## Performance
 
 - On small arrays, **Python** and **C** perform similarly.  
