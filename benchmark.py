@@ -2,6 +2,7 @@ import ctypes
 import time
 import random
 
+
 # -------------------------
 # Load C DLL
 # -------------------------
