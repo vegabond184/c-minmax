@@ -1,3 +1,7 @@
+'''
+made by prateek yadav
+'''
+
 import ctypes
 import time
 import random
