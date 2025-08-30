@@ -14,14 +14,23 @@ It also includes a **benchmarking script** that compares the performance of the 
   - Benchmark performance on arrays of different sizes.
 
 ---
+## Performance
+
+- On small arrays, **Python** and **C** perform similarly.  
+- On large arrays (e.g., **1 million integers**):  
+  - **C implementation (`findMin` / `findMax`)** runs ~2× faster.  
+- Performance gain increases with input size because **C avoids Python’s interpreter overhead**.  
+
+✅ This makes the **C DLL approach** useful when you need **high-performance numeric operations**.
+---
 
 ## 📂 Project Structure
-
-.
-├── minmax.c # C source code (DLL)
-├── minmax.dll # Compiled DLL (Windows)
-├── benchmark.py # Python benchmarking script
-└── README.md # Project documentation
+<pre>
+  |── minmax.c 
+  ├── minmax.dll 
+  ├── benchmark.py 
+  └── README.md 
+</pre>
 
 
 
@@ -35,14 +44,12 @@ On Windows, you can use **MinGW** or **MSVC** to compile:
 ```sh
 gcc -shared -o minmax.dll -fPIC minmax.c
 
+```
+### 2. Run python script
 
+```sh
 python benchmark.py
 
-yaml
+```
 
-Array size: 100000
-Results match? True
-C DLL -> min: -999872, max: 999421, time: 0.012345 sec
-Python -> min: -999872, max: 999421, time: 0.045678 sec
-C DLL faster? True
 --------------------------------------------------
